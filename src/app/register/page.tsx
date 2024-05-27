@@ -51,7 +51,7 @@ export default function Register() {
           <Input
             name="NickName"
             value={state.formInputs.nickName}
-            minLength={10}
+            maxLength={10}
             placeholder={`${inputs.nickName}`}
             required={true}
             onChange={(e) => {
