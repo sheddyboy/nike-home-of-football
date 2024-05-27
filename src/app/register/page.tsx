@@ -104,9 +104,7 @@ export default function Register() {
             }
           />
         </div>
-        <div>
-          <span className="text-sm-mix mx-auto">Max. 10 Characters</span>
-        </div>
+        <span className="text-sm-mix mx-auto">Max. 10 Characters</span>
       </form>
       <div className="mb-[166px] flex w-full justify-between px-[55px]">
         <span className="w-[310px]">
