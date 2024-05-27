@@ -16,12 +16,12 @@ export default function LeaderBoard() {
       animate={{ opacity: 1 }}
       className="flex flex-col items-center pt-[260px]"
     >
-      <h1 className="h3 text-center gap-[27.5px] mb-[278px]">
+      <h1 className="h3 mb-[278px] gap-[27.5px] text-center">
         WOULD YOU LIKE TO <br />
         COMPETE ON <br />
         THE LEADERBOARD?
       </h1>
-      <div className="px-[55px] w-full flex flex-col mb-[335px] gap-[27.5px]">
+      <div className="mb-[335px] flex w-full flex-col gap-[27.5px] px-[55px]">
         <Option
           active={state.leaderBoard.amateur}
           onClick={() =>
@@ -61,7 +61,7 @@ export default function LeaderBoard() {
           </div>
         </Option>
       </div>
-      <div className="mb-[166px] flex justify-between w-full px-[55px]">
+      <div className="mb-[166px] flex w-full justify-between px-[55px]">
         <span className="w-[310px]">
           <NavBtn text="PREVIOUS" link="/language" active={true} />
         </span>

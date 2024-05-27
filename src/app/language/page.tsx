@@ -15,12 +15,12 @@ export default function Language() {
       animate={{ opacity: 1 }}
       className="flex flex-col items-center pt-[260px]"
     >
-      <div className="h3 flex flex-col items-center gap-[27.5px] mb-[278px]">
+      <div className="h3 mb-[278px] flex flex-col items-center gap-[27.5px]">
         <span>Choose your Language</span>
-        <span className="h-[2px] bg-black w-full max-w-[640px]"></span>
+        <span className="h-[2px] w-full max-w-[640px] bg-black"></span>
         <span>WÄHLE DEINE SPRACHE</span>
       </div>
-      <div className="px-[55px] w-full flex flex-col mb-[335px] gap-[27.5px]">
+      <div className="mb-[335px] flex w-full flex-col gap-[27.5px] px-[55px]">
         <Option
           active={state.language.en}
           onClick={() =>
@@ -44,7 +44,7 @@ export default function Language() {
           Deutsch
         </Option>
       </div>
-      <div className="w-[640px] mb-[166px]">
+      <div className="mb-[166px] w-[640px]">
         <NavBtn text="NEXT" link="/leaderboard" active={state.language.next} />
       </div>
       <Footer />

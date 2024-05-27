@@ -22,10 +22,10 @@ export default function Game() {
       animate={{ opacity: 1 }}
       className="flex flex-col items-center pt-[260px]"
     >
-      <h1 className="h3 text-center gap-[27.5px] mb-[227px]">
+      <h1 className="h3 mb-[227px] gap-[27.5px] text-center">
         Choose your GAME
       </h1>
-      <div className="px-[55px] w-full flex flex-col mb-[227.32px] gap-[27.5px]">
+      <div className="mb-[227.32px] flex w-full flex-col gap-[27.5px] px-[55px]">
         <Option
           active={state.game.speed}
           onClick={() =>
@@ -248,7 +248,7 @@ export default function Game() {
           </div>
         </Option>
       </div>
-      <div className="mb-[166px] flex justify-between w-full px-[55px]">
+      <div className="mb-[166px] flex w-full justify-between px-[55px]">
         <span className="w-[310px]">
           <NavBtn text="PREVIOUS" link="/leaderboard" active={true} />
         </span>

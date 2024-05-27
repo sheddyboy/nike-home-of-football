@@ -67,28 +67,28 @@
 
   h1,
   .h1 {
-    @apply font-futura font-bold uppercase text-[165px] leading-[85%] tracking-[-8.25px];
+    @apply font-futura text-[165px] font-bold uppercase leading-[85%] tracking-[-8.25px];
   }
   h2,
   .h2 {
-    @apply font-futura font-bold uppercase text-[85px] leading-[95%] tracking-[-4.25px];
+    @apply font-futura text-[85px] font-bold uppercase leading-[95%] tracking-[-4.25px];
   }
   h3,
   .h3 {
-    @apply font-helvetica font-bold uppercase text-[58.5px] leading-[95%] tracking-[-1.17px];
+    @apply font-helvetica text-[58.5px] font-bold uppercase leading-[95%] tracking-[-1.17px];
   }
 
   .text-sm-caps {
-    @apply font-helvetica font-bold uppercase text-[20.825px] leading-[95%] tracking-[0.208px];
+    @apply font-helvetica text-[20.825px] font-bold uppercase leading-[95%] tracking-[0.208px];
   }
   .text-sm-mix {
-    @apply font-helvetica font-normal text-[20.825px] leading-[105%] tracking-[0.208px];
+    @apply font-helvetica text-[20.825px] font-normal leading-[105%] tracking-[0.208px];
   }
   .text-big-caps {
-    @apply font-helvetica font-bold uppercase text-[41.5px] leading-[95%] tracking-[0px];
+    @apply font-helvetica text-[41.5px] font-bold uppercase leading-[95%] tracking-[0px];
   }
   .text-big-mix {
-    @apply font-helvetica font-bold text-[41.5px] leading-[105%] tracking-[0px];
+    @apply font-helvetica text-[41.5px] font-bold leading-[105%] tracking-[0px];
   }
 }
 

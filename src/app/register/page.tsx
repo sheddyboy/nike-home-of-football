@@ -24,7 +24,7 @@ export default function Register() {
       className="flex flex-col items-center pt-[260px]"
     >
       <h1 className="h3 mb-[227px]">REGISTER</h1>
-      <form className="flex flex-col justify-stretch gap-[7.5px] w-full px-[55px] mb-[750px]">
+      <form className="mb-[750px] flex w-full flex-col justify-stretch gap-[7.5px] px-[55px]">
         <div className="flex flex-col gap-[27.5px]">
           <Input
             name="Email"
@@ -109,7 +109,7 @@ export default function Register() {
         </div>
         <span className="text-sm-mix mx-auto">Max. 10 Characters</span>
       </form>
-      <div className="mb-[166px] flex justify-between w-full px-[55px]">
+      <div className="mb-[166px] flex w-full justify-between px-[55px]">
         <span className="w-[310px]">
           <NavBtn text="PREVIOUS" link="/game" active={true} />
         </span>

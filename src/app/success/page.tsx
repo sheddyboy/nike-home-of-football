@@ -14,7 +14,7 @@ export default function Success() {
       animate={{ opacity: 1 }}
       className="flex flex-col items-center pt-[260px]"
     >
-      <h1 className="text-center items-center gap-[27.5px] mb-[730px]">
+      <h1 className="mb-[730px] items-center gap-[27.5px] text-center">
         Enter
         <br />
         the cage to <br />
@@ -22,7 +22,7 @@ export default function Success() {
         <br />
         the game
       </h1>
-      <div className="w-[640px] mb-[166px]">
+      <div className="mb-[166px] w-[640px]">
         <NavBtn
           text="RESTART"
           link="/"

@@ -8,7 +8,7 @@ export default function Home() {
     <motion.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="px-[55px] py-[62px] flex flex-col items-center"
+      className="flex flex-col items-center px-[55px] py-[62px]"
     >
       <Image
         src="/HeroLogo.png"
@@ -16,12 +16,12 @@ export default function Home() {
         height={683}
         alt="MAD BRILLIANCE TRAIL"
       />
-      <h1 className="h3 max-w-[970px] mt-[344px] mb-[293px] text-center">
+      <h1 className="h3 mb-[293px] mt-[344px] max-w-[970px] text-center">
         Lace up and play <br />
         in the latest <br />
         Nike Football Boots
       </h1>
-      <div className="w-[640px] mb-[214px]">
+      <div className="mb-[214px] w-[640px]">
         <NavBtn text="START" link="/language" active={true} />
       </div>
     </motion.main>

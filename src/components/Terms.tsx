@@ -11,7 +11,7 @@ export default function Terms({ height, closeClickEvent }: TermsProps) {
     <motion.div
       initial={{ y: "100%" }}
       animate={{ y: height }}
-      className="flex flex-col gap-[15px] fixed bottom-0"
+      className="fixed bottom-0 flex flex-col gap-[15px]"
     >
       <svg
         className="mx-auto cursor-pointer"
@@ -39,7 +39,7 @@ export default function Terms({ height, closeClickEvent }: TermsProps) {
         />
       </svg>
       <div className="relative h-[75vh] overflow-auto bg-white">
-        <div className="pt-[80px] pb-[80px] px-[55px] flex flex-col">
+        <div className="flex flex-col px-[55px] pb-[80px] pt-[80px]">
           <h3 className="text-big-caps mx-auto mb-[100px]">
             TERMS & CONDITIONS
           </h3>
@@ -150,7 +150,7 @@ export default function Terms({ height, closeClickEvent }: TermsProps) {
         </div>
         <Link
           href="/success"
-          className="flex justify-center sticky bottom-0 text-big-caps w-full rounded-t-[10px] shadow-custom-shadow py-[55px] bg-white"
+          className="text-big-caps sticky bottom-0 flex w-full justify-center rounded-t-[10px] bg-white py-[55px] shadow-custom-shadow"
         >
           Accept
         </Link>

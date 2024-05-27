@@ -14,7 +14,7 @@ export default function NavBtn({ text, link, active, onClick }: NavBtnProps) {
       onClick={onClick}
       className={`${
         !active && "pointer-events-none opacity-20"
-      } border-t border-t-black pt-[55px] text-big-caps text-center`}
+      } text-big-caps border-t border-t-black pt-[55px] text-center`}
     >
       <Link href={link}>{text}</Link>
     </div>

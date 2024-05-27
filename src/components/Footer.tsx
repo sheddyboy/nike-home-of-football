@@ -1,6 +1,6 @@
 export default function Footer({}) {
   return (
-    <footer className="font-futura text-[25.83px] font-bold tracking-[-1.808px] flex justify-between w-full items-center px-[55px] py-[42.5px] grow">
+    <footer className="flex w-full grow items-center justify-between px-[55px] py-[42.5px] font-futura text-[25.83px] font-bold tracking-[-1.808px]">
       <span>HOME OF FOOTBALL</span>
       <svg
         width="94"
