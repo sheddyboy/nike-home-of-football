@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import NavBtn from "@/components/NavBtn";
 import Terms from "@/components/Terms";
 import { Input } from "@/components/ui/input";
-import { useContext, useRef, useState } from "react";
+import { useContext, useState } from "react";
 import { motion } from "framer-motion";
 import { FormCtx } from "@/context/form/FormProvider";
 
@@ -16,7 +16,6 @@ export default function Register() {
   });
   const [height, setHeight] = useState("100%");
   const [nextBtn, setNextBtn] = useState(false);
-  const nameRef = useRef<HTMLInputElement>(null);
   return (
     <motion.main
       initial={{ opacity: 0 }}
@@ -52,18 +51,16 @@ export default function Register() {
           <Input
             name="NickName"
             value={state.formInputs.nickName}
-            ref={nameRef}
+            minLength={10}
             placeholder={`${inputs.nickName}`}
             required={true}
-            onChange={(e) =>
+            onChange={(e) => {
               dispatch({
                 type: "formInputs",
                 payload: { nickName: e.target.value },
-              })
-            }
-            onInput={() =>
-              setNextBtn(nameRef.current?.form?.checkValidity() ?? false)
-            }
+              });
+              setNextBtn(e.target.form?.checkValidity() ?? false);
+            }}
             onFocus={() => setInputs((prev) => ({ ...prev, nickName: "" }))}
             onBlur={(e) => {
               e.target.value.trim() === "" &&
@@ -107,7 +104,9 @@ export default function Register() {
             }
           />
         </div>
-        <span className="text-sm-mix mx-auto">Max. 10 Characters</span>
+        <div>
+          <span className="text-sm-mix mx-auto">Max. 10 Characters</span>
+        </div>
       </form>
       <div className="mb-[166px] flex w-full justify-between px-[55px]">
         <span className="w-[310px]">
