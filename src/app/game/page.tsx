@@ -2,19 +2,15 @@
 import Footer from "@/components/Footer";
 import NavBtn from "@/components/NavBtn";
 import Option from "@/components/Option";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { motion } from "framer-motion";
 import { FormCtx } from "@/context/form/FormProvider";
 
 export default function Game() {
   const { state, dispatch } = useContext(FormCtx);
-
-  const [toggle, setToggle] = useState({
-    speed: true,
-    touch: true,
-    precision: true,
-    next: false,
-  });
+  const {
+    language: { en },
+  } = state;
 
   return (
     <motion.main
@@ -23,7 +19,7 @@ export default function Game() {
       className="flex flex-col items-center pt-[260px]"
     >
       <h1 className="h3 mb-[227px] gap-[27.5px] text-center">
-        Choose your GAME
+        {en ? "Choose your GAME" : "Wähle dein SPIEL"}
       </h1>
       <div className="mb-[227.32px] flex w-full flex-col gap-[27.5px] px-[55px]">
         <Option
@@ -36,7 +32,7 @@ export default function Game() {
                 touch: false,
                 precision: false,
                 next: true,
-                value: "SPEED TRIAL",
+                value: "Speed",
               },
             })
           }
@@ -49,7 +45,7 @@ export default function Game() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0_393_891)">
+              <g clipPath="url(#clip0_393_891)">
                 <path
                   d="M88.5686 8.83295H91.5986C94.9133 8.83295 96.9062 10.4598 96.9062 13.1848C96.9062 14.5676 96.3775 17.801 91.4969 17.801H88.5686V8.83295ZM97.1096 33.6832L97.2316 33.8256H105.285C105.285 33.8256 97.7603 23.0476 97.496 22.6816C102.824 21.2784 104.776 16.6419 104.776 12.7171C104.776 9.15833 103.292 5.88427 100.831 3.93204C98.8381 2.38653 96.7639 1.61377 90.9072 1.61377H80.719V33.8256H88.5686V19.6922C88.7109 19.9159 95.3607 31.2023 97.1299 33.6629"
                   fill="black"
@@ -115,7 +111,7 @@ export default function Game() {
                 touch: true,
                 precision: false,
                 next: true,
-                value: "TOUCH TRIAL",
+                value: "Touch",
               },
             })
           }
@@ -128,7 +124,7 @@ export default function Game() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0_393_232)">
+              <g clipPath="url(#clip0_393_232)">
                 <path
                   d="M90.2834 26.0201H71.7898V21.2786H85.2683V13.7685H71.7898V9.5409H89.6534V2.02246H63.3347V33.5468H90.2834V26.0201Z"
                   fill="black"
@@ -178,7 +174,7 @@ export default function Game() {
                 touch: false,
                 precision: true,
                 next: true,
-                value: "PRECISION TRIAL",
+                value: "Precision",
               },
             })
           }
@@ -191,7 +187,7 @@ export default function Game() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0_393_205)">
+              <g clipPath="url(#clip0_393_205)">
                 <path
                   d="M127.984 24.7309L105.368 1.69727V1.71466L105.359 1.69727L105.299 33.7913H112.203L112.237 18.2616L127.558 33.8174L134.784 33.8348L134.845 1.74074L128.028 1.73205L127.984 24.7309Z"
                   fill="black"
@@ -250,10 +246,18 @@ export default function Game() {
       </div>
       <div className="mb-[166px] flex w-full justify-between px-[55px]">
         <span className="w-[310px]">
-          <NavBtn text="PREVIOUS" link="/leaderboard" active={true} />
+          <NavBtn
+            text={en ? "PREVIOUS" : "ZURÜCK"}
+            link="/leaderboard"
+            active={true}
+          />
         </span>
         <span className="w-[310px]">
-          <NavBtn text="NEXT" link="/register" active={state.game.next} />
+          <NavBtn
+            text={en ? "NEXT" : "WEITER"}
+            link="/register"
+            active={state.game.next}
+          />
         </span>
       </div>
       <Footer />

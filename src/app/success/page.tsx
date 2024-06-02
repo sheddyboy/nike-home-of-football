@@ -6,7 +6,10 @@ import { motion } from "framer-motion";
 import { useContext } from "react";
 
 export default function Success() {
-  const { dispatch } = useContext(FormCtx);
+  const { state, dispatch } = useContext(FormCtx);
+  const {
+    language: { en },
+  } = state;
 
   return (
     <motion.main
@@ -15,16 +18,16 @@ export default function Success() {
       className="flex flex-col items-center pt-[260px]"
     >
       <h1 className="mb-[730px] items-center gap-[27.5px] text-center">
-        Enter
+        {en ? "Enter" : "Betritt die"}
         <br />
-        the cage to <br />
-        start
+        {en ? "the cage to" : "Box und"} <br />
+        {en ? "start" : "starte deinen"}
         <br />
-        the game
+        {en ? "the game" : "Trial"}
       </h1>
       <div className="mb-[166px] w-[640px]">
         <NavBtn
-          text="RESTART"
+          text={en ? "RESTART" : "Neu starten"}
           link="/"
           active={true}
           onClick={() => dispatch({ type: "reset" })}

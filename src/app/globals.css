@@ -100,3 +100,72 @@
     @apply bg-background text-foreground;
   }
 }
+
+.hg-theme-default.myTheme {
+  background-color: white;
+  border-radius: 0px;
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+.hg-theme-default.myTheme.hg-layout-default .hg-button-lock {
+  stroke: black;
+}
+.hg-theme-default.myTheme.hg-layout-shift .hg-button-lock {
+  background-color: #232323;
+  stroke: white;
+}
+.hg-theme-default.myTheme .hg-button.hg-standardBtn[data-skbtn="@"] {
+  max-width: none;
+}
+.hg-theme-default.myTheme .hg-button.hg-standardBtn,
+.hg-theme-default.myTheme .hg-button.hg-functionBtn {
+  width: 80px;
+}
+.hg-theme-default.myTheme .hg-row .hg-button-container,
+.hg-theme-default.myTheme .hg-row .hg-button:not(:last-child) {
+  margin-right: 9px;
+}
+.hg-theme-default.myTheme .hg-row:not(:last-child) {
+  margin-bottom: 9px;
+}
+.hg-theme-default.myTheme .hg-button {
+  background-color: #ececec;
+  color: #000000;
+  font-weight: 700;
+  font-size: 41.5px;
+  line-height: 95%;
+  height: 80px;
+  border-radius: 10px;
+}
+.hg-theme-default.myTheme .hg-button.hg-button-space {
+  width: 50%;
+}
+.hg-rows .hg-row:nth-child(1) {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hg-rows .hg-row:nth-child(2) {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hg-rows .hg-row:nth-child(3) {
+  width: 86%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hg-rows .hg-row:nth-child(4) {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hg-rows .hg-row:nth-child(5) {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,17 +1,23 @@
 "use client";
+import { FormCtx } from "@/context/form/FormProvider";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useContext } from "react";
 interface TermsProps {
   height: string;
   closeClickEvent: () => void;
 }
 
 export default function Terms({ height, closeClickEvent }: TermsProps) {
+  const { state } = useContext(FormCtx);
+  const {
+    language: { en },
+  } = state;
   return (
     <motion.div
       initial={{ y: "100%" }}
       animate={{ y: height }}
-      className="fixed bottom-0 flex flex-col gap-[15px]"
+      className="fixed bottom-0 left-0 flex flex-col gap-[15px]"
     >
       <svg
         className="mx-auto cursor-pointer"
@@ -41,7 +47,7 @@ export default function Terms({ height, closeClickEvent }: TermsProps) {
       <div className="relative h-[75vh] overflow-auto bg-white">
         <div className="flex flex-col px-[55px] pb-[80px] pt-[80px]">
           <h3 className="text-big-caps mx-auto mb-[100px]">
-            TERMS & CONDITIONS
+            {en ? "TERMS & CONDITIONS" : "Allgemeine Geschäftsbedingungen"}
           </h3>
           <p className="text-sm-mix">
             <span className="text-sm-caps">TERMS OF SALE</span>
@@ -148,12 +154,12 @@ export default function Terms({ height, closeClickEvent }: TermsProps) {
             the products.
           </p>
         </div>
-        <Link
-          href="/success"
+        <button
+          type="submit"
           className="text-big-caps sticky bottom-0 flex w-full justify-center rounded-t-[10px] bg-white py-[55px] shadow-custom-shadow"
         >
-          Accept
-        </Link>
+          {en ? "Accept" : "Akzeptieren"}
+        </button>
       </div>
     </motion.div>
   );

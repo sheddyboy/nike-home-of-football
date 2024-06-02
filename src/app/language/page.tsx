@@ -26,7 +26,7 @@ export default function Language() {
           onClick={() =>
             dispatch({
               type: "language",
-              payload: { en: true, de: false, next: true, value: "English" },
+              payload: { en: true, de: false, next: true, value: "EN" },
             })
           }
         >
@@ -37,7 +37,7 @@ export default function Language() {
           onClick={() =>
             dispatch({
               type: "language",
-              payload: { en: false, de: true, next: true, value: "Deutsch" },
+              payload: { en: false, de: true, next: true, value: "DE" },
             })
           }
         >

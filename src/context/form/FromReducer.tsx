@@ -25,6 +25,7 @@ export const formDefaultStates = {
   formInputs: {
     email: "",
     nickName: "",
+    shoeSize: "",
     language: "",
     leaderBoard: "",
     game: "",

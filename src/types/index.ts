@@ -21,6 +21,7 @@ export interface ReducerState {
   formInputs: {
     email: string;
     nickName: string;
+    shoeSize: string;
     language: string;
     leaderBoard: string;
     game: string;
