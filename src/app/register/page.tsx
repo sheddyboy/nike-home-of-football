@@ -84,7 +84,7 @@ export default function Register() {
       Email: state.formInputs.email,
     };
     console.log("data", data);
-    fetch("/api/start", {
+    fetch("http://localhost:9476/api/start", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -116,7 +116,6 @@ export default function Register() {
             placeholder={`${inputs.email}`}
             type="email"
             value={state.formInputs.email}
-            required={true}
             onChange={handleChange}
             onFocus={(e) => {
               setInputs((prev) => ({ ...prev, email: "" }));
