@@ -84,7 +84,7 @@ export default function Register() {
       Email: state.formInputs.email,
     };
     console.log("data", data);
-    fetch("http://localhost:9476/api/start", {
+    fetch(process.env.NEXT_PUBLIC_ENDPOINT!, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
