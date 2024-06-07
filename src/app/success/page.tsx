@@ -30,7 +30,14 @@ export default function Success() {
           text={en ? "RESTART" : "Neu starten"}
           link="/"
           active={true}
-          onClick={() => dispatch({ type: "reset" })}
+          onClick={() => {
+            dispatch({ type: "reset" });
+            fetch(
+              `${process.env.NEXT_PUBLIC_ENDPOINT!}/api/restart`, 
+              { method: "POST" }
+            );
+            }
+          }
         />
       </div>
       <Footer />
