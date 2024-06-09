@@ -107,7 +107,7 @@ export default function Register() {
       <h1 className="h3 mb-[227px]">{en ? "REGISTER" : "REGISTRIERUNG"}</h1>
       <form
         autoComplete="off"
-        className="mb-[750px] flex w-full flex-col justify-stretch gap-[7.5px] px-[55px]"
+        className="mb-[590px] flex w-full flex-col justify-stretch gap-[7.5px] px-[55px]"
         onSubmit={handleSubmit}
       >
         <div className="flex flex-col gap-[27.5px]">
@@ -135,77 +135,82 @@ export default function Register() {
               e.target.checkValidity() && setKeyboardAnimation("100%");
             }}
           />
-          <Input
-            name="nickName"
-            value={state.formInputs.nickName}
-            maxLength={10}
-            placeholder={`${inputs.nickName}`}
-            required={true}
-            onChange={(e) => {
-              handleChange(e);
-              setNextBtn(e.target.form?.checkValidity() ?? false);
-            }}
-            onFocus={(e) => {
-              setInputs((prev) => ({ ...prev, nickName: "" }));
-              handleFocus(e);
-              setKeyboardAnimation("0%");
-            }}
-            onBlur={(e) => {
-              e.target.value.trim() === "" &&
-                setInputs((prev) => ({
-                  ...prev,
-                  nickName: en
-                    ? "Enter A NICKNAME..."
-                    : "Gib deinen Nickname ein...",
-                }));
-              setKeyboardAnimation("100%");
-              setNextBtn(e.target.form?.checkValidity() ?? false);
-            }}
-          />
-          <span className="text-sm-mix mx-auto">
-            Max. 10 {en ? "Characters" : "Zeichen"}
-          </span>
-          <div className="relative flex items-center">
+          <div className="flex flex-col gap-[8px]">
             <Input
-              name="shoeSize"
-              value={state.formInputs.shoeSize}
-              maxLength={2}
-              placeholder={`${inputs.shoeSize}`}
+              name="nickName"
+              value={state.formInputs.nickName}
+              maxLength={10}
+              placeholder={`${inputs.nickName}`}
               required={true}
               onChange={(e) => {
                 handleChange(e);
                 setNextBtn(e.target.form?.checkValidity() ?? false);
               }}
               onFocus={(e) => {
-                setInputs((prev) => ({ ...prev, shoeSize: "" }));
+                setInputs((prev) => ({ ...prev, nickName: "" }));
                 handleFocus(e);
                 setKeyboardAnimation("0%");
-                setShoeSizeTextToggle(true);
               }}
               onBlur={(e) => {
                 e.target.value.trim() === "" &&
                   setInputs((prev) => ({
                     ...prev,
-                    shoeSize: en
-                      ? "INSERT YOUR SHOE SIZE..."
-                      : "GIB DEINE SCHUHGRÖSSE EIN...",
+                    nickName: en
+                      ? "Enter A NICKNAME..."
+                      : "Gib deinen Nickname ein...",
                   }));
                 setKeyboardAnimation("100%");
                 setNextBtn(e.target.form?.checkValidity() ?? false);
-                setShoeSizeTextToggle(
-                  e.target.value.trim() === "" ? false : true,
-                );
               }}
             />
-            {shoeSizeTextToggle && (
-              <span className="text-big-caps absolute left-[26px] leading-[95%]">
-                EU
-              </span>
-            )}
+            <span className="text-sm-mix mx-auto">
+              Max. 10 {en ? "Characters" : "Zeichen"}
+            </span>
           </div>
-          <span className="text-sm-mix mx-auto">
-            Max. 2 {en ? "Characters" : "Zeichen"}
-          </span>
+
+          <div className=" flex flex-col  gap-[8px]">
+            <div className="relative flex items-center">
+              <Input
+                name="shoeSize"
+                value={state.formInputs.shoeSize}
+                maxLength={2}
+                placeholder={`${inputs.shoeSize}`}
+                required={true}
+                onChange={(e) => {
+                  handleChange(e);
+                  setNextBtn(e.target.form?.checkValidity() ?? false);
+                }}
+                onFocus={(e) => {
+                  setInputs((prev) => ({ ...prev, shoeSize: "" }));
+                  handleFocus(e);
+                  setKeyboardAnimation("0%");
+                  setShoeSizeTextToggle(true);
+                }}
+                onBlur={(e) => {
+                  e.target.value.trim() === "" &&
+                    setInputs((prev) => ({
+                      ...prev,
+                      shoeSize: en
+                        ? "INSERT YOUR SHOE SIZE..."
+                        : "GIB DEINE SCHUHGRÖSSE EIN...",
+                    }));
+                  setKeyboardAnimation("100%");
+                  setNextBtn(e.target.form?.checkValidity() ?? false);
+                  setShoeSizeTextToggle(
+                    e.target.value.trim() === "" ? false : true,
+                  );
+                }}
+              />
+              {shoeSizeTextToggle && (
+                <span className="text-big-caps absolute left-[26px] leading-[95%]">
+                  EU
+                </span>
+              )}
+            </div>
+            <span className="text-sm-mix mx-auto">
+              Max. 2 {en ? "Characters" : "Zeichen"}
+            </span>
+          </div>
         </div>
         <Terms height={height} closeClickEvent={() => setHeight("100%")} />
       </form>
@@ -274,16 +279,16 @@ export default function Register() {
           theme={"hg-theme-default hg-layout-default myTheme"}
           layout={{
             default: [
-              "a b c d e f g h i j k",
-              "l m n o p q r s t u",
-              "{lock} v w x y z ä ü ö {bksp}",
+              "q w e r t y u i o p",
+              "a s d f g h j k l",
+              "{lock} z x c v b n m ä ü ö {bksp}",
               "0 1 2 3 4 5 6 7 8 9",
               ". _ - {space} @ {enter}",
             ],
             shift: [
-              "A B C D E F G H I J K",
-              "L M N O P Q R S T U",
-              "{lock} V W X Y Z Ä Ü Ö {bksp}",
+              "Q W E R T Y U I O P",
+              "A S D F G H J K L",
+              "{lock} Z X C V B N M Ä Ü Ö {bksp}",
               "0 1 2 3 4 5 6 7 8 9",
               ". _ - {space} @ {enter}",
             ],

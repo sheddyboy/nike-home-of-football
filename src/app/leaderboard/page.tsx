@@ -16,7 +16,7 @@ export default function LeaderBoard() {
     <motion.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="flex flex-col items-center pt-[260px]"
+      className="flex h-[100vh] flex-col items-center pt-[260px]"
     >
       <h1 className="h3 mb-[278px] gap-[27.5px] text-center uppercase">
         {en ? "COMPETE IN" : "Willst du"} <br />
