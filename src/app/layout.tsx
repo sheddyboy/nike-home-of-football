@@ -35,7 +35,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${futura.variable} ${helveticaFont.variable} bg-[url("/background.jpg")] bg-cover bg-no-repeat`}
+        className={`${futura.variable} ${helveticaFont.variable} bg-[url("/background.jpg")] bg-cover bg-no-repeat overflow-clip`}
+        
       >
         <FormProvider>{children}</FormProvider>
       </body>
