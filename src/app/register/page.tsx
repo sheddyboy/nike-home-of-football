@@ -217,11 +217,15 @@ export default function Register() {
 
       <div className="mb-[166px] flex w-full justify-between px-[55px]">
         <span className="w-[310px]">
-          <NavBtn text="PREVIOUS" link="/game" active={true} />
+          <NavBtn
+            text={en ? "PREVIOUS" : "ZURÜCK"}
+            link="/game"
+            active={true}
+          />
         </span>
         <span className="w-[310px]">
           <NavBtn
-            text="NEXT"
+            text={en ? "NEXT" : "WEITER"}
             link="#"
             active={nextBtn}
             onClick={() => setHeight("0%")}
