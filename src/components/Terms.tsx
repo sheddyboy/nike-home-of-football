@@ -271,7 +271,7 @@ export default function Terms({ height, closeClickEvent }: TermsProps) {
           type="submit"
           className="text-big-caps sticky bottom-0 flex w-full justify-center rounded-t-[10px] bg-white py-[55px] shadow-custom-shadow"
         >
-          Accept
+          {en ? "Accept" : "Akzeptieren"}
         </button>
       </div>
     </motion.div>
