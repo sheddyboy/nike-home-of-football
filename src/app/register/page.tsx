@@ -54,7 +54,7 @@ export default function Register() {
       payload: {
         [inputTrack.name]:
           inputTrack.name === "shoeSize"
-            ? input.replace(/[^0-9]/g, "").slice(0, 2)
+            ? input.replace(/[^0-9.]/g, "")
             : input,
       },
     });
