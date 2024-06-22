@@ -24,8 +24,11 @@ export const formDefaultStates = {
   },
   formInputs: {
     email: "",
+    name: "",
+    lastName: "",
     nickName: "",
     shoeSize: "",
+    isAtLeast18: false,
     language: "",
     leaderBoard: "",
     game: "",

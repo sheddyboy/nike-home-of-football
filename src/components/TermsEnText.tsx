@@ -2,7 +2,7 @@ export default function TermsEnText() {
   return (
     <div className="flex flex-col px-[55px] pb-[80px] pt-[80px]">
       <h3 className="text-big-caps mx-auto mb-[100px]">TERMS & CONDITIONS</h3>
-      <p className="text-sm-mix">
+      <div className="text-sm-mix">
         <b>NIKE EVENT DECLARATION OF CONSENT</b>
         <br />
         <br />
@@ -494,7 +494,7 @@ export default function TermsEnText() {
             claim arising out of or in connection to these Additional Terms.
           </li>
         </ol>
-      </p>
+      </div>
     </div>
   );
 }

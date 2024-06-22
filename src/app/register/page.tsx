@@ -25,9 +25,14 @@ export default function Register() {
   } = state;
 
   const [inputs, setInputs] = useState({
-    email: en ? "Enter your E-mail..." : "Gib deine E-Mail-Adresse ein...",
-    nickName: en ? "Enter A NICKNAME..." : "Gib deinen Nickname ein...",
+    email: en ? "INSERT your E-mail..." : "Gib deine E-Mail-Adresse ein...",
+    name: en ? "INSERT your NAME..." : "Gib deinen Vornamen ein...",
+    lastName: en ? "INSERT your Lastname..." : "Gib deinen nachnamen ein...",
+    nickName: en ? "INSERT YOUR NICKNAME..." : "Gib deinen Nickname ein...",
     shoeSize: en ? "INSERT YOUR SHOE SIZE..." : "GIB DEINE SCHUHGRÖSSE EIN...",
+    isAtLeast18: en
+      ? "I am at least 18 years old"
+      : "Ich bin mindestens 18 Jahre alt",
   });
   const [height, setHeight] = useState("100%");
   const [nextBtn, setNextBtn] = useState(false);
@@ -41,10 +46,10 @@ export default function Register() {
   const keyboard = useRef<KeyboardReactInterface | null>(null);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
+    const { name, value, checked } = event.target;
     dispatch({
       type: "formInputs",
-      payload: { [name]: value },
+      payload: { [name]: name === "isAtLeast18" ? checked : value },
     });
   };
 
@@ -82,6 +87,9 @@ export default function Register() {
       Game: state.formInputs.game,
       Shoesize: +state.formInputs.shoeSize,
       Email: state.formInputs.email,
+      Name: state.formInputs.name,
+      LastName: state.formInputs.lastName,
+      IsAtLeast18: state.formInputs.isAtLeast18,
     };
     console.log("data", data);
     fetch(`${process.env.NEXT_PUBLIC_ENDPOINT!}/api/start`, {
@@ -104,13 +112,13 @@ export default function Register() {
       animate={{ opacity: 1 }}
       className="flex flex-col items-center pt-[260px]"
     >
-      <h1 className="h3 mb-[227px]">{en ? "REGISTER" : "REGISTRIERUNG"}</h1>
+      <h1 className="h3 mb-[46px]">{en ? "REGISTER" : "REGISTRIERUNG"}</h1>
       <form
         autoComplete="off"
-        className="mb-[590px] flex w-full flex-col justify-stretch gap-[7.5px] px-[55px]"
+        className="mb-[400px] flex w-full flex-col justify-stretch gap-[7.5px] px-[55px]"
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-col gap-[27.5px]">
+        <div className="flex flex-col gap-[26px]">
           <Input
             name="email"
             placeholder={`${inputs.email}`}
@@ -128,13 +136,69 @@ export default function Register() {
                 setInputs((prev) => ({
                   ...prev,
                   email: en
-                    ? "Enter your E-mail..."
+                    ? "INSERT your E-mail..."
                     : "Gib deine E-Mail-Adresse ein...",
                 }));
               !e.target.checkValidity() && e.target.reportValidity();
               e.target.checkValidity() && setKeyboardAnimation("100%");
             }}
           />
+          <div className="flex flex-col gap-[8px]">
+            <Input
+              name="name"
+              value={state.formInputs.name}
+              placeholder={`${inputs.name}`}
+              required={true}
+              onChange={(e) => {
+                handleChange(e);
+                setNextBtn(e.target.form?.checkValidity() ?? false);
+              }}
+              onFocus={(e) => {
+                setInputs((prev) => ({ ...prev, name: "" }));
+                handleFocus(e);
+                setKeyboardAnimation("0%");
+              }}
+              onBlur={(e) => {
+                e.target.value.trim() === "" &&
+                  setInputs((prev) => ({
+                    ...prev,
+                    name: en
+                      ? "INSERT your NAME..."
+                      : "Gib deinen Vornamen ein...",
+                  }));
+                setKeyboardAnimation("100%");
+                setNextBtn(e.target.form?.checkValidity() ?? false);
+              }}
+            />
+          </div>
+          <div className="flex flex-col gap-[8px]">
+            <Input
+              name="lastName"
+              value={state.formInputs.lastName}
+              placeholder={`${inputs.lastName}`}
+              required={true}
+              onChange={(e) => {
+                handleChange(e);
+                setNextBtn(e.target.form?.checkValidity() ?? false);
+              }}
+              onFocus={(e) => {
+                setInputs((prev) => ({ ...prev, lastName: "" }));
+                handleFocus(e);
+                setKeyboardAnimation("0%");
+              }}
+              onBlur={(e) => {
+                e.target.value.trim() === "" &&
+                  setInputs((prev) => ({
+                    ...prev,
+                    lastName: en
+                      ? "INSERT your Lastname..."
+                      : "Gib deinen nachnamen ein...",
+                  }));
+                setKeyboardAnimation("100%");
+                setNextBtn(e.target.form?.checkValidity() ?? false);
+              }}
+            />
+          </div>
           <div className="flex flex-col gap-[8px]">
             <Input
               name="nickName"
@@ -167,7 +231,6 @@ export default function Register() {
               Max. 10 {en ? "Characters" : "Zeichen"}
             </span>
           </div>
-
           <div className=" flex flex-col  gap-[8px]">
             <div className="relative flex items-center">
               <Input
@@ -210,6 +273,26 @@ export default function Register() {
             <span className="text-sm-mix mx-auto">
               Max. 2 {en ? "Characters" : "Zeichen"}
             </span>
+          </div>
+          <div className="flex flex-col gap-[8px]">
+            <label htmlFor="isAtLeast18">
+              <input
+                type="checkbox"
+                hidden
+                required={true}
+                name="isAtLeast18"
+                id="isAtLeast18"
+                checked={state.formInputs.isAtLeast18}
+                onChange={(e) => {
+                  handleChange(e);
+                  setNextBtn(e.target.form?.checkValidity() ?? false);
+                }}
+              />
+              <Input
+                className={`pointer-events-none ${state.formInputs.isAtLeast18 ? "bg-black placeholder:text-white" : ""}`}
+                placeholder={`${inputs.isAtLeast18}`}
+              />
+            </label>
           </div>
         </div>
         <Terms height={height} closeClickEvent={() => setHeight("100%")} />

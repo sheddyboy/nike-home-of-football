@@ -20,8 +20,11 @@ export interface ReducerState {
   };
   formInputs: {
     email: string;
+    name: string;
+    lastName: string;
     nickName: string;
     shoeSize: string;
+    isAtLeast18: boolean;
     language: string;
     leaderBoard: string;
     game: string;
